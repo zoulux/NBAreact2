@@ -33,6 +33,7 @@ class GameStatsTeam extends React.Component {
       playersBasicStats: [],
       dataSource: ds.cloneWithRows([])
     }
+
   }
 
   // adds suffix to a number for league ranking. ex: 1 -> 1st
@@ -66,7 +67,10 @@ class GameStatsTeam extends React.Component {
     var teamID = TeamMap[team].id;
     var season = STORE.season;
     var url = 'http://stats.nba.com/stats/teaminfocommon?LeagueID=00&SeasonType=Regular+Season&TeamID=' + teamID + '&season=' + season;
-    fetch(url)
+    fetch(url,{
+        headers:{
+            'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1'}
+    })
     .then((response) => response.json())
     .then((jsonResponse) => {
       this.setState({
@@ -84,7 +88,10 @@ class GameStatsTeam extends React.Component {
     var team = this.props.team;
     var teamID = TeamMap[team].id;
     var url = 'http://stats.nba.com/stats/teamplayerdashboard?DateFrom=&DateTo=&GameSegment=&LastNGames=0&LeagueID=00&Location=&MeasureType=Base&Month=0&OpponentTeamID=0&Outcome=&PaceAdjust=N&PerMode=PerGame&Period=0&PlusMinus=N&Rank=N&Season=' + season + '&SeasonSegment=&SeasonType=Regular+Season&TeamID=' + teamID + '&VsConference=&VsDivision';
-    fetch(url)
+    fetch(url,{
+        headers:{
+            'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1'}
+    })
     .then((response) => response.json())
     .then((jsonResponse) => {
       this.setState({
@@ -101,7 +108,10 @@ class GameStatsTeam extends React.Component {
     var season = STORE.season;
     var teamID = TeamMap[this.props.team].id;
     var url = 'http://stats.nba.com/stats/commonteamroster?LeagueID=00&Season=' + season + '&TeamID=' + teamID; // <-- basic player info, position, number, height, weight, etc.
-    fetch(url)
+    fetch(url,{
+        headers:{
+            'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1'}
+    })
     .then((response) => response.json())
     .then((jsonResponse) => {
       this.setState({
@@ -189,7 +199,7 @@ var styles = StyleSheet.create({
     backgroundColor: '#FCFCFC'
   },
   header: {
-    marginTop: 62,
+    marginTop: 52,
     height: 100,
     flexDirection: 'row'
   },

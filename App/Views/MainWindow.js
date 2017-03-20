@@ -32,8 +32,8 @@ class MainWindow extends React.Component {
           tabBarInactiveTextColor='#e5e5e5'
           tabBarUnderlineColor='#FFCCBC'
         >
-          <ScoresPage tabLabel='Scores' />
-          <StandingsPage tabLabel='Standings' />
+          <ScoresPage tabLabel='Scores我是列表' />
+          <StandingsPage tabLabel='Standings我是啥呢' />
         </ScrollableTabView>
       </View>
     )

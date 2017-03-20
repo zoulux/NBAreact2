@@ -20,13 +20,13 @@ class GameStatsPage extends React.Component {
     return (
       <View style={styles.main}>
         <ScrollableTabView
-          renderTabBar={() => <DefaultTabBar style={{marginTop: 62, backgroundColor: '#0288D1', borderColor: '#0288D1'}} />}
+          renderTabBar={() => <DefaultTabBar style={{marginTop: 52, backgroundColor: '#0288D1', borderColor: '#0288D1'}} />}
           tabBarActiveTextColor='#FFFFFF'
           tabBarInactiveTextColor='#e5e5e5'
           tabBarUnderlineColor='#b3dbf1'
         >
-          <GameStatsTeam tabLabel='Teams' game={game} />
-          <GameStatsPlayers tabLabel='Players' game={game} />
+          <GameStatsTeam tabLabel='Team队伍么' game={game} />
+          <GameStatsPlayers tabLabel='Players球员么' game={game} />
         </ScrollableTabView>
       </View>
     )
